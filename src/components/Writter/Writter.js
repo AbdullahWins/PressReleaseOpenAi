@@ -5,7 +5,7 @@ import icon2 from "../../assets/icons/icon2.svg";
 const Writter = () => {
   return (
     <section className="flex items-center justify-center md:mt-[-212px]">
-      <div className="flex items-center justify-center pt-16 border-2 border-titleGradientEnd w-10/12 bg-whiteHigh rounded-3xl">
+      <div className="flex items-center justify-center pt-16 border-2 border-titleGradientEnd w-10/12 bg-whiteHigh rounded-3xl shadow-lg shadow-blackLow">
         <div className="max-w-6xl">
           <div className="pb-16">
             <p className="text-transparent bg-clip-text bg-gradient-to-r from-titleGradientStart to-titleGradientEnd text-6xl font-bold pb-2">

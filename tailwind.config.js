@@ -43,6 +43,8 @@ module.exports = {
       cardGradientEnd: "#9BDCF8",
       titleGradientStart: "#5846FB",
       titleGradientEnd: "#AA3EFF",
+      testimonialColor: "#2B59FF",
+      clientSay: "#000B33",
 
       // about
       aboutTextStart: "#242526",
