@@ -32,10 +32,11 @@ module.exports = {
       btnColorDisabled: "#EBEBEB",
       titleColor: "#242526",
       subTitleColor: "#808080",
+      textSubtitleColor: "#757575",
 
       //btn colors
-      btnGradientStart: "#242526",
-      btnGradientEnd: "#8A8A8A",
+      btnGradientStart: "#5846FB",
+      btnGradientEnd: "#AA3EFF",
       btnHoverColor: "#8001EF",
       btnNavColor: "#242526",
       cardGradientStart: "#6F7BF7",
