@@ -5,12 +5,14 @@ import Footer from "../components/shared/Footer/Footer";
 
 const Main = () => {
   return (
-    <section
-      className={`min-h-screen flex flex-col justify-between bg-red-200 bg-no-repeat bg-top text-center`}
-    >
-      <Outlet></Outlet>
-      <Footer></Footer>
-    </section>
+    <div className=" flex items-center justify-center">
+      <section
+        className={`min-h-screen max-w-screen-2xl flex flex-col justify-between bg-red-200 bg-no-repeat bg-top text-center`}
+      >
+        <Outlet></Outlet>
+        <Footer></Footer>
+      </section>
+    </div>
   );
 };
 

@@ -40,6 +40,8 @@ module.exports = {
       btnNavColor: "#242526",
       cardGradientStart: "#6F7BF7",
       cardGradientEnd: "#9BDCF8",
+      titleGradientStart: "#5846FB",
+      titleGradientEnd: "#AA3EFF",
 
       // about
       aboutTextStart: "#242526",
