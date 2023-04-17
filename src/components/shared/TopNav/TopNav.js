@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const TopNav = () => {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between gap-4 bg-whiteHigh md:rounded-full px-4 md:px-20 py-3">
-      <Link to="/help">
+    <section className="flex items-center justify-between gap-4 bg-whiteHigh rounded-full px-4 md:px-20 py-3">
+      <Link to="/help" className="hidden md:block">
         <button className="text-xl btn btn-ghost hover:bg-btnHoverColor hover:text-whiteHigh rounded-full normal-case">
           Help
         </button>
@@ -24,7 +24,7 @@ const TopNav = () => {
           Support
         </button>
       </Link>
-      <Link to="/privacy">
+      <Link to="/privacy" className="hidden md:block">
         <button className="text-xl btn btn-ghost hover:bg-btnHoverColor hover:text-whiteHigh rounded-full normal-case">
           Privacy
         </button>
