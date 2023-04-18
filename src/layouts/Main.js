@@ -7,7 +7,7 @@ const Main = () => {
   return (
     <div className=" flex items-center justify-center">
       <section
-        className={`min-h-screen max-w-[1920px] flex flex-col justify-between bg-red-200 bg-no-repeat bg-top text-center`}
+        className={`min-h-screen w-full max-w-[1920px] flex flex-col justify-between bg-red-200 bg-no-repeat bg-top text-center`}
       >
         <Outlet></Outlet>
         <Footer></Footer>

@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import icon1 from "../../assets/icons/icon1.svg";
 import icon2 from "../../assets/icons/icon2.svg";
+import { AiContext } from "../../contexts/AiContext";
 
 const Writter = () => {
+  const { setInput, setPrompt, processRequest } = useContext(AiContext);
+
+  const handleInputChange = (e) => {
+    const selectedValue = e.target.value;
+    setInput(selectedValue);
+  };
+
+  const handlePromptChange = (e) => {
+    const value = e.target.value;
+    console.log(value);
+    setPrompt(value);
+  };
+
+  const handleSubmit = () => {
+    processRequest();
+  };
+
   return (
     <section className="flex items-center justify-center md:mt-[-212px]">
-      <div className="flex items-center justify-center pt-16 border-2 border-titleGradientEnd w-10/12 bg-whiteHigh rounded-3xl shadow-lg shadow-blackLow">
+      <div className="flex items-center justify-center pt-16 border-2 border-titleGradientEnd w-10/12 bg-whiteHigh rounded-3xl shadow-lg shadow-blackLow p-4">
         <div className="max-w-6xl">
           <div className="pb-16">
             <p className="text-transparent bg-clip-text bg-gradient-to-r from-titleGradientStart to-titleGradientEnd text-6xl font-bold pb-2">
@@ -16,7 +34,7 @@ const Writter = () => {
               for you.
             </p>
           </div>
-          <sectionn className="flex flex-col md:flex-row gap-0 items-center justify-center pb-20 ">
+          <section className="flex flex-col md:flex-row gap-0 items-center justify-center pb-20 ">
             <div className="flex gap-6 items-start justify-center max-w-xl h-48 border-2 border-titleGradientStart rounded-2xl p-4">
               <img src={icon1} alt="" />
               <div className="text-start">
@@ -43,18 +61,27 @@ const Writter = () => {
                 </p>
               </div>
             </div>
-          </sectionn>
+          </section>
           <section className="flex flex-col pb-12">
             <div>
-              <select className="select w-full max-w-6xl border-2 border-btnGradientEnd mb-7">
-                <option disabled selected>
-                  Step 1: What do you want AI to do for you?
+              <select
+                required
+                onChange={handleInputChange}
+                defaultValue={"Select One"}
+                className="select w-full max-w-6xl border-2 border-btnGradientEnd mb-7"
+              >
+                <option disabled>Select One</option>
+                <option value="Write a new press release about the following topic:">
+                  New Press Release
                 </option>
-                <option>New Press Release</option>
-                <option>Improve Press Release</option>
+                <option value="Rewrite and improve this press release:">
+                  Improve Press Release
+                </option>
               </select>
             </div>
             <textarea
+              required
+              onChange={handlePromptChange}
               className="textarea w-full max-w-6xl border-2 border-btnGradientEnd"
               rows="10"
               placeholder="Step 2: Tell us about your news announcement."
@@ -62,7 +89,13 @@ const Writter = () => {
             <p className="text-start text-textSubtitleColor text-sm">
               Describe your news in 3-4 sentences. Add a quote or two.
             </p>
-            <button className="btn btn-wide mt-12 mb-2 bg-gradient-to-r from-btnGradientStart to-btnGradientEnd normal-case border-none">
+            <button
+              // disabled={prompt.length < 10}
+              onClick={() => {
+                handleSubmit();
+              }}
+              className="btn btn-wide mt-12 mb-2 bg-gradient-to-r from-btnGradientStart to-btnGradientEnd normal-case border-none"
+            >
               Generate Press Release
             </button>
           </section>
