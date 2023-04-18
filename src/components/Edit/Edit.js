@@ -1,13 +1,15 @@
 import React, { useContext } from "react";
 import { AiContext } from "../../contexts/AiContext";
 import { StorageContext } from "../../contexts/StorageContext";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 const Edit = () => {
   const { prompt, output, setFinalOutput, setEmail } = useContext(AiContext);
   const { addToDb } = useContext(StorageContext);
 
-  const handlePromptChange = (e) => {
-    const value = e.target.value;
+  const handlePromptChange = () => {
+    const value = document.getElementById("output").innerText;
     console.log(value);
     setFinalOutput(value);
   };
@@ -49,16 +51,19 @@ const Edit = () => {
               <p className="text-start text-textSubtitleColor text-sm font-bold">
                 Edit Your Press Release
               </p>
-              <textarea
-                name="message"
+              <ReactQuill
+                theme="snow"
+                name="output"
                 id="output"
                 required
                 defaultValue={output}
-                onChange={handlePromptChange}
+                onChange={() => {
+                  handlePromptChange();
+                }}
                 className="textarea w-full max-w-6xl border-2 border-btnGradientEnd"
                 rows="10"
                 placeholder=""
-              ></textarea>
+              />
             </div>
             <div>
               <p className="text-start text-textSubtitleColor text-sm font-bold">
