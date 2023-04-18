@@ -2,12 +2,31 @@ import React, { createContext, useContext } from "react";
 import { setDoc, doc, addDoc, collection } from "firebase/firestore";
 import { firestoreStorage } from "../firebase/firebase.config";
 import { AiContext } from "./AiContext";
+import emailjs from "@emailjs/browser";
 
 export const StorageContext = createContext();
 
 const StorageProvider = ({ children }) => {
   const { input, prompt, finalOutput, email, setDocumentId } =
     useContext(AiContext);
+
+  const sendEmail = (documentId) => {
+    console.log(email);
+    try {
+      const result = emailjs.send(
+        "service_92saieo",
+        "template_gqa6nqc",
+        {
+          documentId: documentId,
+          email: email,
+        },
+        "Mr8aWITeJJrGm4YMV"
+      );
+      console.log(result.text);
+    } catch (error) {
+      console.log(error.text);
+    }
+  };
 
   //add with id
   const addToDb = async () => {
@@ -18,6 +37,7 @@ const StorageProvider = ({ children }) => {
       );
       console.log("Document written with ID: ", docRef.id);
       setDocumentId(docRef.id);
+      sendEmail(docRef.id);
     } catch (e) {
       console.error("Error adding document: ", e);
     }

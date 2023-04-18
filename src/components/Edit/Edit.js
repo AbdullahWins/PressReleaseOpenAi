@@ -50,7 +50,7 @@ const Edit = () => {
                 Edit Your Press Release
               </p>
               <textarea
-                name="output"
+                name="message"
                 id="output"
                 required
                 defaultValue={output}
@@ -68,7 +68,7 @@ const Edit = () => {
                 required
                 onChange={handleEmailChange}
                 type="email"
-                name="email"
+                name="user_email"
                 id="email"
                 className="input w-full max-w-6xl border-2 border-btnGradientEnd rounded-lg"
               />
