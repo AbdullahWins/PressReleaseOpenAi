@@ -1,26 +1,28 @@
-import React, { createContext } from "react";
+import React, { createContext, useContext } from "react";
 import { setDoc, doc, addDoc, collection } from "firebase/firestore";
 import { firestoreStorage } from "../firebase/firebase.config";
+import { AiContext } from "./AiContext";
 
 export const StorageContext = createContext();
 
 const StorageProvider = ({ children }) => {
+  const { input, prompt, finalOutput, email, setDocumentId } =
+    useContext(AiContext);
+
   //add with id
   const addToDb = async () => {
     try {
       const docRef = await addDoc(
         collection(firestoreStorage, "queryDetails"),
-        {
-          first: "Ada",
-          last: "Lovelace",
-          born: 1815,
-        }
+        { email, input, prompt, finalOutput }
       );
       console.log("Document written with ID: ", docRef.id);
+      setDocumentId(docRef.id);
     } catch (e) {
       console.error("Error adding document: ", e);
     }
   };
+
   //add with custom id
   const addWithCustomId = async (email) => {
     try {

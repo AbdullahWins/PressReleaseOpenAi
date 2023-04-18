@@ -15,6 +15,9 @@ const AiProvider = ({ children }) => {
   const [input, setInput] = useState("");
   const [prompt, setPrompt] = useState("");
   const [output, setOutput] = useState("");
+  const [finalOutput, setFinalOutput] = useState("");
+  const [email, setEmail] = useState("");
+  const [documentId, setDocumentId] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   //functions
@@ -35,14 +38,17 @@ const AiProvider = ({ children }) => {
       }
       const responseCorrect = response?.data?.choices[0]?.text;
       setOutput(responseCorrect);
+      setFinalOutput(responseCorrect);
     } catch (error) {
       console.log(error.message);
     }
   };
 
-  console.log("ip", input);
-  console.log("pr", prompt);
-  console.log("op", output);
+//   console.log("ip", input);
+//   console.log("pr", prompt);
+//   console.log("op", output);
+//   console.log("email", email);
+  console.log("id", documentId);
 
   //reset output
   const resetOutput = () => {
@@ -57,9 +63,15 @@ const AiProvider = ({ children }) => {
     resetOutput,
     prompt,
     setPrompt,
+    email,
+    setEmail,
+    finalOutput,
+    setFinalOutput,
     processRequest,
     isLoading,
     setIsLoading,
+    documentId,
+    setDocumentId,
   };
 
   return <AiContext.Provider value={aiInfo}>{children}</AiContext.Provider>;

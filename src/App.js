@@ -8,11 +8,11 @@ function App() {
   const Router = routes;
   return (
     <div className="App">
-      <StorageProvider>
-        <AiProvider>
+      <AiProvider>
+        <StorageProvider>
           <RouterProvider router={Router}></RouterProvider>
-        </AiProvider>
-      </StorageProvider>
+        </StorageProvider>
+      </AiProvider>
     </div>
   );
 }

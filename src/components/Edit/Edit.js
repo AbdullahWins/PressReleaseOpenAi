@@ -3,17 +3,22 @@ import { AiContext } from "../../contexts/AiContext";
 import { StorageContext } from "../../contexts/StorageContext";
 
 const Edit = () => {
-  const { prompt, output, setOutput, processRequest } = useContext(AiContext);
+  const { prompt, output, setFinalOutput, setEmail } = useContext(AiContext);
   const { addToDb } = useContext(StorageContext);
 
   const handlePromptChange = (e) => {
     const value = e.target.value;
     console.log(value);
-    setOutput(value);
+    setFinalOutput(value);
+  };
+
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    console.log(value);
+    setEmail(value);
   };
 
   const handleSubmit = () => {
-    processRequest();
     addToDb();
   };
 
@@ -28,7 +33,7 @@ const Edit = () => {
           </div>
           <section className="flex flex-col pb-12 gap-4">
             <div>
-              <p className="text-start text-textSubtitleColor text-sm">
+              <p className="text-start text-textSubtitleColor text-sm font-bold">
                 Press Release Description
               </p>
               <input
@@ -37,11 +42,11 @@ const Edit = () => {
                 name="input"
                 id="input"
                 defaultValue={prompt}
-                className="textarea w-full max-w-6xl border-2 border-btnGradientEnd"
+                className="input w-full max-w-6xl border-2 border-btnGradientEnd"
               ></input>
             </div>
             <div>
-              <p className="text-start text-textSubtitleColor text-sm">
+              <p className="text-start text-textSubtitleColor text-sm font-bold">
                 Edit Your Press Release
               </p>
               <textarea
@@ -56,24 +61,28 @@ const Edit = () => {
               ></textarea>
             </div>
             <div>
-              <p className="text-start text-textSubtitleColor text-sm">
+              <p className="text-start text-textSubtitleColor text-sm font-bold">
                 Your Corporate Email Address
               </p>
               <input
+                required
+                onChange={handleEmailChange}
                 type="email"
                 name="email"
                 id="email"
-                className=" w-full max-w-6xl border-2 border-btnGradientEnd rounded-lg"
+                className="input w-full max-w-6xl border-2 border-btnGradientEnd rounded-lg"
               />
+              <div className="flex items-start justify-start">
+                <button
+                  onClick={() => {
+                    handleSubmit();
+                  }}
+                  className="btn mt-12 mb-2 bg-gradient-to-r from-btnGradientStart to-btnGradientEnd normal-case border-none"
+                >
+                  Checkout
+                </button>
+              </div>
             </div>
-            <button
-              onClick={() => {
-                handleSubmit();
-              }}
-              className="btn btn-wide mt-12 mb-2 bg-gradient-to-r from-btnGradientStart to-btnGradientEnd normal-case border-none"
-            >
-              Generate Press Release
-            </button>
           </section>
         </div>
       </div>
