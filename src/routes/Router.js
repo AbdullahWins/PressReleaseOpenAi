@@ -5,6 +5,7 @@ import About from "../pages/About/About";
 import Help from "../pages/Help/Help";
 import Support from "../pages/Support/Support";
 import Privacy from "../pages/Privacy/Privacy";
+import Edit from "../components/Edit/Edit";
 
 export const routes = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ export const routes = createBrowserRouter([
       {
         path: "/home",
         element: <Home></Home>,
+      },
+      {
+        path: "/edit",
+        element: <Edit></Edit>,
       },
       {
         path: "/about",

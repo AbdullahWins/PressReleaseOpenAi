@@ -19,6 +19,7 @@ const AiProvider = ({ children }) => {
 
   //functions
   const processRequest = async () => {
+    setOutput("");
     try {
       const response = await openai.createCompletion({
         model: "text-davinci-003",

@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import icon1 from "../../assets/icons/icon1.svg";
 import icon2 from "../../assets/icons/icon2.svg";
 import { AiContext } from "../../contexts/AiContext";
-import { StorageContext } from "../../contexts/StorageContext";
+import { useNavigate } from "react-router-dom";
 
 const Writter = () => {
   const { setInput, setPrompt, processRequest } = useContext(AiContext);
-  const { addToDb } = useContext(StorageContext);
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const selectedValue = e.target.value;
@@ -21,7 +21,9 @@ const Writter = () => {
 
   const handleSubmit = () => {
     processRequest();
-    addToDb();
+    setTimeout(() => {
+      navigate("/edit");
+    }, 5000);
   };
 
   return (

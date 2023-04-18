@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import "./Main.css";
 import Footer from "../components/shared/Footer/Footer";
+import Hero from "../components/Hero/Hero";
 
 const Main = () => {
   return (
@@ -9,6 +10,7 @@ const Main = () => {
       <section
         className={`min-h-screen w-full max-w-[1920px] flex flex-col justify-between bg-red-200 bg-no-repeat bg-top text-center`}
       >
+        <Hero></Hero>
         <Outlet></Outlet>
         <Footer></Footer>
       </section>
