@@ -5,7 +5,7 @@ import customer3 from "../../../assets/images/customer3.png";
 
 const Cards = () => {
   return (
-    <section className="flex items-center justify-between gap-8">
+    <section className="flex flex-col md:flex-row items-center justify-between gap-8">
       <div className="flex flex-col items-center justify-between gap-4 shadow-md shadow-blackLow p-14 rounded-xl max-w-md text-start">
         <div className="flex justify-between w-full">
           <div className="flex flex-col text-customerText">
