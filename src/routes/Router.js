@@ -6,6 +6,7 @@ import Help from "../pages/Help/Help";
 import Support from "../pages/Support/Support";
 import Privacy from "../pages/Privacy/Privacy";
 import Edit from "../components/Edit/Edit";
+import Authentication from "../pages/Authentication/Authentication";
 
 export const routes = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ export const routes = createBrowserRouter([
       {
         path: "/privacy",
         element: <Privacy></Privacy>,
+      },
+      {
+        path: "/authentication",
+        element: <Authentication></Authentication>,
       },
     ],
   },
