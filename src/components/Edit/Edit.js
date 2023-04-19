@@ -25,7 +25,7 @@ const Edit = () => {
   const handleSubmit = () => {
     addToDb();
     setTimeout(() => {
-      navigate("/authentication");
+      navigate("/success");
     }, 1000);
   };
 

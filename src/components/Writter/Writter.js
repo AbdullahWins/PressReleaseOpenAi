@@ -5,7 +5,7 @@ import { AiContext } from "../../contexts/AiContext";
 import { useNavigate } from "react-router-dom";
 
 const Writter = () => {
-  const { setInput, setPrompt, processRequest } = useContext(AiContext);
+  const { setInput, setPrompt, processRequest, output } = useContext(AiContext);
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -19,11 +19,12 @@ const Writter = () => {
     setPrompt(value);
   };
 
+  if (output) {
+    navigate("/edit");
+  }
+
   const handleSubmit = () => {
     processRequest();
-    setTimeout(() => {
-      navigate("/edit");
-    }, 5000);
   };
 
   return (

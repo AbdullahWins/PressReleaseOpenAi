@@ -8,6 +8,7 @@ import Privacy from "../pages/Privacy/Privacy";
 import Edit from "../components/Edit/Edit";
 import Authentication from "../pages/Authentication/Authentication";
 import FinalDocument from "../pages/FinalDocument/FinalDocument";
+import Success from "../pages/Success/Success";
 
 export const routes = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ export const routes = createBrowserRouter([
       {
         path: "/final",
         element: <FinalDocument></FinalDocument>,
+      },
+      {
+        path: "/success",
+        element: <Success></Success>,
       },
     ],
   },

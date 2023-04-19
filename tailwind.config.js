@@ -61,6 +61,10 @@ module.exports = {
       //getstarted
       getStartedGradientStart: "#5846FB",
       getStartedGradientEnd: "#AA3EFF",
+
+      //success
+      successTextColor: "#01DB9C",
+      successPgColor: "#707070",
     },
     extend: {
       backgroundImage: {
