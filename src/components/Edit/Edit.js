@@ -3,10 +3,12 @@ import { AiContext } from "../../contexts/AiContext";
 import { StorageContext } from "../../contexts/StorageContext";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { useNavigate } from "react-router";
 
 const Edit = () => {
   const { prompt, output, setFinalOutput, setEmail } = useContext(AiContext);
   const { addToDb } = useContext(StorageContext);
+  const navigate = useNavigate();
 
   const handlePromptChange = () => {
     const value = document.getElementById("output").innerText;
@@ -22,10 +24,13 @@ const Edit = () => {
 
   const handleSubmit = () => {
     addToDb();
+    setTimeout(() => {
+      navigate("/authentication");
+    }, 1000);
   };
 
   return (
-    <section className="flex items-center justify-center md:mt-[-212px]">
+    <section className="flex items-center justify-center md:mt-[-212px] pb-40">
       <div className="flex items-center justify-center pt-16 border-2 border-titleGradientEnd w-10/12 bg-whiteHigh rounded-3xl shadow-lg shadow-blackLow p-4">
         <div className="max-w-6xl">
           <div className="pb-16">

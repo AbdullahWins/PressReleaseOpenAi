@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
 import "firebase/firestore";
 import { StorageContext } from "../../contexts/StorageContext";
+import { useNavigate } from "react-router";
 
 const Authentication = () => {
   const { getDocumentFromFirestore, documentData } = useContext(StorageContext);
   const [authCode, setAuthCode] = useState("");
+  const navigate = useNavigate();
 
   const handleCodeChange = (e) => {
     const value = e.target.value;
@@ -14,6 +16,9 @@ const Authentication = () => {
 
   const handleSubmit = () => {
     getDocumentFromFirestore(authCode);
+    setTimeout(() => {
+      navigate("/final");
+    }, 1000);
   };
 
   console.log(documentData);
@@ -45,7 +50,7 @@ const Authentication = () => {
               }}
               className="btn bg-gradient-to-r from-btnGradientStart to-btnGradientEnd normal-case border-none"
             >
-              Checkout
+              Validate
             </button>
           </div>
         </div>
