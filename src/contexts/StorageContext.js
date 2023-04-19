@@ -1,8 +1,8 @@
 import React, { createContext, useContext } from "react";
-import { setDoc, doc, addDoc, collection } from "firebase/firestore";
 import { firestoreStorage } from "../firebase/firebase.config";
 import { AiContext } from "./AiContext";
 import emailjs from "@emailjs/browser";
+import { addDoc, collection, doc, setDoc } from "@firebase/firestore";
 
 export const StorageContext = createContext();
 
@@ -14,13 +14,13 @@ const StorageProvider = ({ children }) => {
     console.log(email);
     try {
       const result = emailjs.send(
-        "service_92saieo",
-        "template_gqa6nqc",
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
         {
           documentId: documentId,
           email: email,
         },
-        "Mr8aWITeJJrGm4YMV"
+        process.env.REACT_APP_PUBLIC_KEY
       );
       console.log(result.text);
     } catch (error) {
