@@ -3,9 +3,9 @@ import Cards from "../shared/Cards/Cards";
 
 const Feedbacks = () => {
   return (
-    <section className="pt-40">
-      <div className="hero min-h-screen">
-        <div className="hero-content text-center">
+    <section>
+      <div className="flex items-center justify-center h-[949px] py-20">
+        <div className="w-10/12">
           <div className="">
             <h4 className="text-2xl font-bold text-testimonialColor">
               Testimonials

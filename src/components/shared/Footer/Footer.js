@@ -4,8 +4,8 @@ import logo from "../../../assets/logos/logo.png";
 const Footer = () => {
   return (
     <footer className="flex flex-col items-center bg-bgFooter text-whiteHigh h-[906px] w-full">
-      <div className="pt-72 max-w-6xl flex flex-col items-center justify-between h-full">
-        <section className="pt-28">
+      <div className="pt-72 w-10/12 flex flex-col items-center justify-between h-full">
+        <section className="pt-28 w-full">
           <div className="grid grid-cols-12 items-center justify-between gap-2 md:gap-24 w-full">
             <div className="col-span-6">
               <img src={logo} alt="" />
