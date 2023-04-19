@@ -4,7 +4,7 @@ import logo from "../../../assets/logos/logo.png";
 const Footer = () => {
   return (
     <footer className="flex flex-col items-center bg-bgFooter text-whiteHigh md:h-[906px] w-full">
-      <div className="md:pt-72 md:w-10/12 flex flex-col items-center justify-between md:h-full">
+      <div className="md:pt-72 md:w-10/12 flex flex-col items-center justify-between h-full">
         <section className="md:pt-28 w-full p-4 md:p-0">
           <div className="grid grid-cols-1 md:grid-cols-12 items-center justify-between gap-2 md:gap-24 w-full">
             <div className="col-span-1 md:col-span-6">
@@ -62,6 +62,7 @@ const Footer = () => {
           </div>
         </section>
       </div>
+      <p></p>
     </footer>
   );
 };

@@ -90,7 +90,7 @@ const Writter = () => {
               onChange={handlePromptChange}
               className="textarea w-full max-w-6xl border-2 border-btnGradientEnd"
               rows="10"
-              placeholder="Step 2: Tell us about your news announcement."
+              placeholder="write something"
             ></textarea>
             <p className="text-start text-textSubtitleColor text-sm">
               Describe your news in 3-4 sentences. Add a quote or two.
