@@ -1,12 +1,13 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { firestoreStorage } from "../firebase/firebase.config";
 import { AiContext } from "./AiContext";
 import emailjs from "@emailjs/browser";
-import { addDoc, collection, doc, setDoc } from "@firebase/firestore";
+import { addDoc, collection, doc, getDoc, setDoc } from "@firebase/firestore";
 
 export const StorageContext = createContext();
 
 const StorageProvider = ({ children }) => {
+  const [documentData, setDocumentData] = useState(null);
   const { input, prompt, finalOutput, email, setDocumentId } =
     useContext(AiContext);
 
@@ -25,6 +26,24 @@ const StorageProvider = ({ children }) => {
       console.log(result.text);
     } catch (error) {
       console.log(error.text);
+    }
+  };
+
+  // //fetch document
+  const getDocumentFromFirestore = async (authCode) => {
+    setDocumentData("");
+    try {
+      const ref = doc(firestoreStorage, "queryDetails", authCode);
+      const docSnap = await getDoc(ref);
+      if (docSnap.exists()) {
+        const rowDocumentData = docSnap.data();
+        console.log(rowDocumentData);
+        setDocumentData(rowDocumentData);
+      } else {
+        console.log("No such doCUMent!");
+      }
+    } catch (error) {
+      console.error("Error fetching doCUMent!", error);
     }
   };
 
@@ -59,6 +78,8 @@ const StorageProvider = ({ children }) => {
   const authInfo = {
     addToDb,
     addWithCustomId,
+    documentData,
+    getDocumentFromFirestore,
   };
   return (
     <StorageContext.Provider value={authInfo}>

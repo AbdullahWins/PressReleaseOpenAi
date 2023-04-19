@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import "firebase/firestore";
+import { StorageContext } from "../../contexts/StorageContext";
 
 const Authentication = () => {
+  const { getDocumentFromFirestore, documentData } = useContext(StorageContext);
+  const [authCode, setAuthCode] = useState("");
+
+  const handleCodeChange = (e) => {
+    const value = e.target.value;
+    console.log(value);
+    setAuthCode(value);
+  };
+
+  const handleSubmit = () => {
+    getDocumentFromFirestore(authCode);
+  };
+
+  console.log(documentData);
+
   return (
     <section className="flex items-center justify-center md:mt-[-212px] pb-40">
       <div className="flex items-center justify-center pt-16 border-2 border-titleGradientEnd w-10/12 bg-whiteHigh rounded-3xl shadow-lg shadow-blackLow p-4">
@@ -18,15 +35,14 @@ const Authentication = () => {
             <input
               required
               type="text"
-              name="authcode"
-              id="authcode"
+              onChange={handleCodeChange}
               placeholder="Enter access key here"
               className="input w-full max-w-6xl border-2 border-btnGradientEnd"
             ></input>
             <button
-              //   onClick={() => {
-              //     handleSubmit();
-              //   }}
+              onClick={() => {
+                handleSubmit();
+              }}
               className="btn bg-gradient-to-r from-btnGradientStart to-btnGradientEnd normal-case border-none"
             >
               Checkout
