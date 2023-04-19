@@ -1,8 +1,9 @@
 import React from "react";
+import Cards from "../shared/Cards/Cards";
 
 const Feedbacks = () => {
   return (
-    <section>
+    <section className="pt-40">
       <div className="hero min-h-screen">
         <div className="hero-content text-center">
           <div className="">
@@ -12,7 +13,7 @@ const Feedbacks = () => {
             <p className="py-6 text-clientSay text-6xl">
               What our happy clients say
             </p>
-            <button className="btn btn-primary">Get Started</button>
+            <Cards></Cards>
           </div>
         </div>
       </div>

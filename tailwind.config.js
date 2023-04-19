@@ -53,6 +53,14 @@ module.exports = {
       aboutGradientEnd: "#B6B6B6",
       aboutHeaderColor: "#A5A5A5",
       aboutDetailsColor: "#767676",
+
+      //stars color
+      starsColor: "#FFC83E",
+      customerText: "#000B33",
+
+      //getstarted
+      getStartedGradientStart: "#5846FB",
+      getStartedGradientEnd: "#AA3EFF",
     },
     extend: {
       backgroundImage: {
