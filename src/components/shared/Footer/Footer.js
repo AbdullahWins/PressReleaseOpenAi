@@ -3,14 +3,14 @@ import logo from "../../../assets/logos/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col items-center bg-bgFooter text-whiteHigh h-[906px] w-full">
-      <div className="pt-72 w-10/12 flex flex-col items-center justify-between h-full">
-        <section className="pt-28 w-full">
-          <div className="grid grid-cols-12 items-center justify-between gap-2 md:gap-24 w-full">
-            <div className="col-span-6">
+    <footer className="flex flex-col items-center bg-bgFooter text-whiteHigh md:h-[906px] w-full">
+      <div className="md:pt-72 md:w-10/12 flex flex-col items-center justify-between md:h-full">
+        <section className="md:pt-28 w-full p-4 md:p-0">
+          <div className="grid grid-cols-1 md:grid-cols-12 items-center justify-between gap-2 md:gap-24 w-full">
+            <div className="col-span-1 md:col-span-6">
               <img src={logo} alt="" />
             </div>
-            <div className="col-span-2 flex flex-col text-start">
+            <div className="col-span-1 md:col-span-2 flex flex-col text-start">
               <span className="footer-title">Services</span>
               <a href="/" className="link link-hover">
                 Branding
@@ -25,7 +25,7 @@ const Footer = () => {
                 Advertisement
               </a>
             </div>
-            <div className="col-span-2 flex flex-col text-start">
+            <div className="col-span-1 md:col-span-2 flex flex-col text-start">
               <span className="footer-title">Company</span>
               <a href="/" className="link link-hover">
                 About us
@@ -40,7 +40,7 @@ const Footer = () => {
                 Press kit
               </a>
             </div>
-            <div className="col-span-2 flex flex-col text-start">
+            <div className="col-span-1 md:col-span-2 flex flex-col text-start">
               <span className="footer-title">Legal</span>
               <a href="/" className="link link-hover">
                 Terms of use
@@ -56,7 +56,7 @@ const Footer = () => {
         </section>
         <section className="w-full">
           <hr className="text-whiteMid" />
-          <div className="flex items-center justify-between w-full py-10">
+          <div className="flex items-center justify-between w-full md:py-10">
             <p>© 2023 All rights reserved</p>
             <p>Develop By Netro Creative</p>
           </div>

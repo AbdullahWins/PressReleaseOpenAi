@@ -7,12 +7,12 @@ const Cards = () => {
   return (
     <section className="flex flex-col md:flex-row items-center justify-between gap-8">
       <div className="flex flex-col items-center justify-between gap-4 shadow-md shadow-blackLow p-14 rounded-xl max-w-md text-start">
-        <div className="flex justify-between w-full">
-          <div className="flex flex-col text-customerText">
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-between w-full">
+          <div className="flex flex-col items-center md:items-start text-customerText">
             <div>
               <img src={customer1} alt="" />
             </div>
-            <div>
+            <div className="text-center md:text-start pt-2">
               <p className="text-2xl font-semibold">Mila McSabbu</p>
               <p className="text-xl">Freelancer Designer</p>
             </div>
@@ -26,15 +26,15 @@ const Cards = () => {
           </div>
         </div>
         <div>
-          <p className="pt-2">
+          <p className="pt-2 md:text-xl">
             OMG! I cannot believe that I have got a brand new landing page after
             getting appmax. It was super easy to edit and publish.
           </p>
         </div>
       </div>
       <div className="flex flex-col items-center justify-between gap-4 shadow-md shadow-blackLow p-14 rounded-xl max-w-md text-start">
-        <div className="flex justify-between w-full">
-          <div className="flex flex-col text-customerText">
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-between w-full">
+          <div className="flex flex-col items-center md:items-start text-customerText">
             <div>
               <img src={customer2} alt="" />
             </div>
@@ -52,15 +52,15 @@ const Cards = () => {
           </div>
         </div>
         <div>
-          <p className="pt-2">
+          <p className="pt-2 md:text-xl">
             OMG! I cannot believe that I have got a brand new landing page after
             getting appmax. It was super easy to edit and publish.
           </p>
         </div>
       </div>
       <div className="flex flex-col items-center justify-between gap-4 shadow-md shadow-blackLow p-14 rounded-xl max-w-md text-start">
-        <div className="flex justify-between w-full">
-          <div className="flex flex-col text-customerText">
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-between w-full">
+          <div className="flex flex-col items-center md:items-start text-customerText">
             <div>
               <img src={customer3} alt="" />
             </div>
@@ -78,7 +78,7 @@ const Cards = () => {
           </div>
         </div>
         <div>
-          <p className="pt-2">
+          <p className="pt-2 md:text-xl">
             OMG! I cannot believe that I have got a brand new landing page after
             getting appmax. It was super easy to edit and publish.
           </p>

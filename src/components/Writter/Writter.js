@@ -28,22 +28,22 @@ const Writter = () => {
   };
 
   return (
-    <section className="flex items-center justify-center mt-20 md:mt-[-212px]">
-      <div className="flex items-center justify-center pt-16 border-2 border-titleGradientEnd w-10/12 bg-whiteHigh rounded-3xl shadow-lg shadow-blackLow p-4">
+    <section className="flex items-center justify-center mt-8 md:mt-[-212px]">
+      <div className="flex items-center justify-center md:pt-16 w-10/12 bg-whiteHigh rounded-3xl shadow-lg shadow-blackLow p-4">
         <div className="max-w-6xl">
           <div className="pb-16">
-            <p className="text-transparent bg-clip-text bg-gradient-to-r from-titleGradientStart to-titleGradientEnd text-6xl font-bold pb-3">
+            <p className="text-transparent bg-clip-text bg-gradient-to-r from-titleGradientStart to-titleGradientEnd text-4xl md:text-6xl font-bold pb-3">
               AI Press Release Writing Tool
             </p>
-            <p className="text-2xl">
+            <p className="text-lg px-2 md:px-0 md:text-2xl">
               Please do not write a chatGPT prompt here. Our system will do that
               for you.
             </p>
           </div>
-          <section className="flex flex-col md:flex-row gap-0 items-center justify-center pb-20 ">
-            <div className="flex gap-6 items-start justify-center max-w-xl h-48 border-2 border-titleGradientStart rounded-2xl p-4">
+          <section className="flex flex-col md:flex-row gap-4 md:gap-0 items-center justify-center pb-20">
+            <div className="flex flex-col md:flex-row gap-6 items-center md:items-start justify-center max-w-xl md:h-48 border-2 border-titleGradientStart rounded-2xl p-4">
               <img src={icon1} alt="" />
-              <div className="text-start">
+              <div className="text-center md:text-start">
                 <p className="text-xl font-bold pb-2">Write a Press Release</p>
                 <p className="text-base">
                   Write a description of your news announcement in the Step 2
@@ -54,9 +54,9 @@ const Writter = () => {
               </div>
             </div>
             <hr className="w-16 text-titleGradientStart" />
-            <div className="flex gap-6 items-start justify-center max-w-xl h-48 border-2 border-titleGradientStart rounded-2xl p-4">
+            <div className="flex flex-col md:flex-row gap-6 items-center md:items-start justify-center max-w-xl md:h-48 border-2 border-titleGradientStart rounded-2xl p-4">
               <img src={icon2} alt="" />
-              <div className="text-start">
+              <div className="text-center md:text-start">
                 <p className="text-xl font-bold pb-2">
                   Improve My Existing Press Release
                 </p>
@@ -68,7 +68,7 @@ const Writter = () => {
               </div>
             </div>
           </section>
-          <section className="flex flex-col pb-12">
+          <section className="flex flex-col pb-0 md:pb-12">
             <div>
               <select
                 required
@@ -100,7 +100,7 @@ const Writter = () => {
               onClick={() => {
                 handleSubmit();
               }}
-              className="btn btn-wide mt-12 mb-2 bg-gradient-to-r from-btnGradientStart to-btnGradientEnd normal-case border-none"
+              className="btn w-full md:btn-wide mt-12 mb-2 bg-gradient-to-r from-btnGradientStart to-btnGradientEnd normal-case border-none"
             >
               Generate Press Release
             </button>
