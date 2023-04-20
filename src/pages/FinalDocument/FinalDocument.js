@@ -6,18 +6,20 @@ import FinalHero from "../../components/FinalHero/FinalHero";
 const FinalDocument = () => {
   const [prompt, setPrompt] = useState("");
   const [output, setOutput] = useState("");
+  const [headlinesOutput, setHeadlinesOutput] = useState("");
   const { documentData } = useContext(StorageContext);
 
   useEffect(() => {
     setPrompt(documentData?.prompt);
     setOutput(documentData?.finalOutput);
+    setHeadlinesOutput(documentData?.headlinesOutput);
   }, [documentData]);
 
   return (
     <div>
       <FinalHero></FinalHero>
-      <section className="flex items-center justify-center md:mt-[-212px] pb-40">
-        <div className="flex items-center justify-center pt-16 border-2 border-titleGradientEnd w-10/12 bg-whiteHigh rounded-3xl shadow-lg shadow-blackLow p-4">
+      <section className="flex items-center justify-center mt-8 md:mt-[-212px] pb-8 md:pb-40">
+        <div className="flex items-center justify-center md:pt-16 w-10/12 bg-whiteHigh rounded-3xl shadow-lg shadow-blackLow p-4">
           <div className="max-w-6xl w-full">
             <section className="flex flex-col gap-4 pb-12">
               <div>
@@ -41,6 +43,18 @@ const FinalDocument = () => {
                   defaultValue={output}
                   className="textarea w-full max-w-6xl border-2 border-btnGradientEnd"
                   rows="10"
+                  placeholder=""
+                ></textarea>
+              </div>
+              <div>
+                <p className="text-start text-textSubtitleColor text-sm">
+                  Some Alternative Headlines
+                </p>
+                <textarea
+                  required
+                  defaultValue={headlinesOutput}
+                  className="textarea w-full max-w-6xl border-2 border-btnGradientEnd"
+                  rows="4"
                   placeholder=""
                 ></textarea>
               </div>

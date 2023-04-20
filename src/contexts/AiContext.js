@@ -15,6 +15,7 @@ const AiProvider = ({ children }) => {
   const [input, setInput] = useState("");
   const [prompt, setPrompt] = useState("");
   const [output, setOutput] = useState("");
+  const [headlinesOutput, setHeadlinesOutput] = useState("");
   const [finalOutput, setFinalOutput] = useState("");
   const [email, setEmail] = useState("");
   const [documentId, setDocumentId] = useState("");
@@ -44,10 +45,32 @@ const AiProvider = ({ children }) => {
     }
   };
 
-//   console.log("ip", input);
-//   console.log("pr", prompt);
-//   console.log("op", output);
-//   console.log("email", email);
+  const processHeadlinesRequest = async () => {
+    setOutput("");
+    try {
+      const response = await openai.createCompletion({
+        model: "text-davinci-003",
+        prompt: `privide 3 alternative headlines for: \n\n ${prompt}`,
+        temperature: 0,
+        max_tokens: 500,
+        top_p: 1.0,
+        frequency_penalty: 0.0,
+        presence_penalty: 0.0,
+      });
+      if (response.status === 200) {
+        setIsLoading(false);
+      }
+      const responseCorrect = response?.data?.choices[0]?.text;
+      setHeadlinesOutput(responseCorrect);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  //   console.log("ip", input);
+  //   console.log("pr", prompt);
+  //   console.log("op", output);
+  //   console.log("email", email);
   console.log("id", documentId);
 
   //reset output
@@ -60,6 +83,7 @@ const AiProvider = ({ children }) => {
     input,
     setInput,
     output,
+    headlinesOutput,
     resetOutput,
     prompt,
     setPrompt,
@@ -68,6 +92,7 @@ const AiProvider = ({ children }) => {
     finalOutput,
     setFinalOutput,
     processRequest,
+    processHeadlinesRequest,
     isLoading,
     setIsLoading,
     documentId,

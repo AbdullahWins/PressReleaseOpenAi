@@ -23,21 +23,21 @@ const AuthHero = () => {
     }, 1000);
   };
   return (
-    <section className="flex flex-col items-center justify-start bg-authHeroBg bg-no-repeat bg-top text-center md:h-[1000px] md:pt-10">
+    <section className="flex flex-col items-center justify-start bg-authHeroBg bg-no-repeat bg-top text-center md:h-[1000px] pt-10">
       <TopNav></TopNav>
-      <div className="flex flex-col items-center justify-center py-8 px-4 md:px-0 md:py-0 md:pt-[189px] text-whiteHigh">
-        <div className="max-w-6xl">
+      <div className="flex flex-col items-center justify-center px-4 md:px-0 md:py-0 md:pt-[189px] text-whiteHigh">
+        <div className="max-w-6xl w-full">
           <div className="pb-16">
-            <p className="text-whiteHigh text-6xl font-bold pb-3">
+            <p className="text-whiteHigh text-4xl md:text-6xl font-bold pb-3">
               Authentication Required
             </p>
-            <p className="text-whiteHigh text-2xl font-bold pb-3">
+            <p className="text-whiteHigh text-xl md:text-2xl font-bold pb-3">
               An access key was emailed to
               <span className="font-black">{email}</span> with this link. Please
               enter it bellow.
             </p>
           </div>
-          <div className="flex items-center justify-center gap-4 pb-16">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 pb-16">
             <input
               required
               type="text"

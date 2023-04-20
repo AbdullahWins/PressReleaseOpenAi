@@ -5,7 +5,13 @@ import { AiContext } from "../../contexts/AiContext";
 import { useNavigate } from "react-router-dom";
 
 const Writter = () => {
-  const { setInput, setPrompt, processRequest, output } = useContext(AiContext);
+  const {
+    setInput,
+    setPrompt,
+    processRequest,
+    processHeadlinesRequest,
+    output,
+  } = useContext(AiContext);
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -25,6 +31,7 @@ const Writter = () => {
 
   const handleSubmit = () => {
     processRequest();
+    processHeadlinesRequest();
   };
 
   return (

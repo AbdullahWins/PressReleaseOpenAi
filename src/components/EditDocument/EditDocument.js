@@ -30,15 +30,15 @@ const EditDocument = () => {
   };
 
   return (
-    <section className="flex items-center justify-center md:mt-[-212px] pb-40">
-      <div className="flex items-center justify-center pt-16 border-2 border-titleGradientEnd w-10/12 bg-whiteHigh rounded-3xl shadow-lg shadow-blackLow p-4">
+    <section className="flex items-center justify-center mt-8 md:mt-[-212px] pb-8 md:pb-40">
+      <div className="flex items-center justify-center md:pt-16 w-10/12 bg-whiteHigh rounded-3xl shadow-lg shadow-blackLow p-4">
         <div className="max-w-6xl">
-          <div className="pb-16">
-            <p className="text-transparent bg-clip-text bg-gradient-to-r from-titleGradientStart to-titleGradientEnd text-6xl font-bold pb-3">
+          <div className="md:pb-16">
+            <p className="text-transparent bg-clip-text bg-gradient-to-r from-titleGradientStart to-titleGradientEnd text-4xl md:text-6xl font-bold pb-3">
               Press Release Results
             </p>
           </div>
-          <section className="flex flex-col pb-12 gap-4">
+          <section className="flex flex-col md:pb-12 gap-4">
             <div>
               <p className="text-start text-textSubtitleColor text-sm font-bold">
                 Press Release Description
@@ -82,12 +82,12 @@ const EditDocument = () => {
                 id="email"
                 className="input w-full max-w-6xl border-2 border-btnGradientEnd rounded-lg"
               />
-              <div className="flex items-start justify-start">
+              <div className="flex items-start justify-center md:justify-start">
                 <button
                   onClick={() => {
                     handleSubmit();
                   }}
-                  className="btn mt-12 mb-2 bg-gradient-to-r from-btnGradientStart to-btnGradientEnd normal-case border-none"
+                  className="btn mt-4 md:mt-12 mb-2 bg-gradient-to-r from-btnGradientStart to-btnGradientEnd normal-case border-none"
                 >
                   Checkout
                 </button>

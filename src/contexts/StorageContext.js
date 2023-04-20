@@ -8,7 +8,7 @@ export const StorageContext = createContext();
 
 const StorageProvider = ({ children }) => {
   const [documentData, setDocumentData] = useState(null);
-  const { input, prompt, finalOutput, email, setDocumentId } =
+  const { input, prompt, finalOutput, headlinesOutput, email, setDocumentId } =
     useContext(AiContext);
 
   const sendEmail = (documentId) => {
@@ -52,7 +52,7 @@ const StorageProvider = ({ children }) => {
     try {
       const docRef = await addDoc(
         collection(firestoreStorage, "queryDetails"),
-        { email, input, prompt, finalOutput }
+        { email, input, prompt, finalOutput, headlinesOutput }
       );
       console.log("Document written with ID: ", docRef.id);
       setDocumentId(docRef.id);
