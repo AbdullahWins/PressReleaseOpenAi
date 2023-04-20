@@ -69,6 +69,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         heroBg: "url('/src/assets/backgrounds/bg_hero.png')",
+        authHeroBg: "url('/src/assets/backgrounds/bg_authhero.jpg')",
       },
     },
   },

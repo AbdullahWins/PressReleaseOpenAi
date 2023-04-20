@@ -5,10 +5,10 @@ import About from "../pages/About/About";
 import Help from "../pages/Help/Help";
 import Support from "../pages/Support/Support";
 import Privacy from "../pages/Privacy/Privacy";
-import Edit from "../components/Edit/Edit";
 import Authentication from "../pages/Authentication/Authentication";
 import FinalDocument from "../pages/FinalDocument/FinalDocument";
 import Success from "../pages/Success/Success";
+import Edit from "../pages/Edit/Edit";
 
 export const routes = createBrowserRouter([
   {

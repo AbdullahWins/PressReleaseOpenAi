@@ -5,7 +5,7 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useNavigate } from "react-router";
 
-const Edit = () => {
+const EditDocument = () => {
   const { prompt, output, setFinalOutput, setEmail } = useContext(AiContext);
   const { addToDb } = useContext(StorageContext);
   const navigate = useNavigate();
@@ -100,4 +100,4 @@ const Edit = () => {
   );
 };
 
-export default Edit;
+export default EditDocument;
