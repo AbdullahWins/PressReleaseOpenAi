@@ -26,7 +26,7 @@ const AuthHero = () => {
     <section className="flex flex-col items-center justify-start bg-authHeroBg bg-no-repeat bg-top text-center md:h-[1000px] pt-10">
       <TopNav></TopNav>
       <div className="flex flex-col items-center justify-center px-4 md:px-0 md:py-0 md:pt-[189px] text-whiteHigh">
-        <div className="max-w-6xl w-full">
+        <div className="max-w-10/12 w-full">
           <div className="pb-16">
             <p className="text-whiteHigh text-4xl md:text-6xl font-bold pb-3">
               Authentication Required
@@ -49,7 +49,7 @@ const AuthHero = () => {
               onClick={() => {
                 handleSubmit();
               }}
-              className="btn px-12 bg-gradient-to-r text-xl from-btnGradientStart to-btnGradientEnd normal-case border-none"
+              className="btn btn-wide bg-gradient-to-r text-2xl from-btnGradientStart to-btnGradientEnd normal-case border-none"
             >
               Validate
             </button>
