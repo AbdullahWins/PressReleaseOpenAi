@@ -54,7 +54,7 @@ const FinalDocument = () => {
                   required
                   defaultValue={headlinesOutput}
                   className="textarea w-full max-w-6xl border-2 border-btnGradientEnd"
-                  rows="4"
+                  rows="7"
                   placeholder=""
                 ></textarea>
               </div>

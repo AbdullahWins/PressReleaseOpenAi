@@ -11,7 +11,6 @@ const Main = () => {
       <section
         className={`min-h-screen w-full max-w-[1920px] flex flex-col justify-between bg-red-200 bg-no-repeat bg-top text-center`}
       >
-        {/* <Hero></Hero> */}
         <Outlet></Outlet>
         <GetStarted></GetStarted>
         <Footer></Footer>
