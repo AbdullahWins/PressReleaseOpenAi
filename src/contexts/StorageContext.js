@@ -27,7 +27,7 @@ const StorageProvider = ({ children }) => {
         },
         process.env.REACT_APP_PUBLIC_KEY
       );
-      console.log(result);
+      console.log(result.status);
     } catch (error) {
       console.log(error.text);
     }

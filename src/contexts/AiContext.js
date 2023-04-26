@@ -1,4 +1,5 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
+import Geocode from "react-geocode";
 
 const { Configuration, OpenAIApi } = require("openai");
 
@@ -8,18 +9,57 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
+Geocode.setApiKey(`${process.env.REACT_APP_GOOGLE_MAP_API_KEY}`);
+Geocode.setLanguage("en");
+
 export const AiContext = createContext();
 
 const AiProvider = ({ children }) => {
   //states
   const [input, setInput] = useState("");
   const [prompt, setPrompt] = useState("");
+  const [userLocation, setUserLocation] = useState([]);
   const [output, setOutput] = useState("");
   const [headlinesOutput, setHeadlinesOutput] = useState("");
   const [finalOutput, setFinalOutput] = useState("");
   const [email, setEmail] = useState("");
   const [documentId, setDocumentId] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  // Get address from latitude & longitude.
+  const getUserLocationFromGoogle = (geoLocation) => {
+    if (geoLocation) {
+      Geocode.fromLatLng(
+        geoLocation[0]?.latitude,
+        geoLocation[1]?.longitude
+      ).then(
+        (response) => {
+          const address = response?.results[0]?.formatted_address;
+          setUserLocation(address);
+          console.log(address);
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+    }
+  };
+
+  useEffect(() => {
+    //get latitude longitude from browser
+    const successCallback = (position) => {
+      const geoLocation = [
+        { latitude: `${position?.coords?.latitude}` },
+        { longitude: `${position?.coords?.longitude}` },
+      ];
+      // setUserGeoLocation(geoLocation);
+      getUserLocationFromGoogle(geoLocation);
+    };
+    const errorCallback = (error) => {
+      console.log(error);
+    };
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+  }, []);
 
   //news creation
   const processRequest = async () => {
@@ -85,6 +125,7 @@ const AiProvider = ({ children }) => {
     setPrompt,
     email,
     setEmail,
+    userLocation,
     finalOutput,
     setFinalOutput,
     processRequest,
