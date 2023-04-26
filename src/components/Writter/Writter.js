@@ -21,7 +21,6 @@ const Writter = () => {
 
   const handlePromptChange = (e) => {
     const value = e.target.value;
-    console.log(value);
     setPrompt(value);
   };
 

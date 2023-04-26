@@ -16,7 +16,8 @@ const Success = () => {
               Success!
             </p>
             <p className="text-base md:text-2xl pb-5 font-semibold">
-              Thank you for using YOURDOMAIN! Your press release will be emailed at
+              Thank you for using {process.env.REACT_APP_ApplicationName}! Your
+              press release will be emailed at
               <span className="font-black"> {email} </span> within a few
               minutes, sooner depending on server load. Remember, while AI is a
               valuable tool in news writing, it requires human supervision so we
@@ -26,7 +27,8 @@ const Success = () => {
             <p className="text-successPgColor text-sm md:text-2xl">
               When you are ready to distribute your press release, consider
               using our press release distribution and news marketing platform,
-              YOURDOMAIN. We'll include a discount code in your email.
+              {process.env.REACT_APP_ApplicationName}. We'll include a discount
+              code in your email.
             </p>
           </div>
         </div>

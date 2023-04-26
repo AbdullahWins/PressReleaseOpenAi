@@ -12,13 +12,11 @@ const EditDocument = () => {
 
   const handlePromptChange = () => {
     const value = document.getElementById("output").innerText;
-    console.log(value);
     setFinalOutput(value);
   };
 
   const handleEmailChange = (e) => {
     const value = e.target.value;
-    console.log(value);
     setEmail(value);
   };
 

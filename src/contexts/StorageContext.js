@@ -11,19 +11,23 @@ const StorageProvider = ({ children }) => {
   const { input, prompt, finalOutput, headlinesOutput, email, setDocumentId } =
     useContext(AiContext);
 
+  //email sender
   const sendEmail = (documentId) => {
-    console.log(email);
+    const applicationName = `${process.env.REACT_APP_ApplicationName}`;
+    const applicationURL = `${process.env.REACT_APP_applicationURL}`;
     try {
       const result = emailjs.send(
         process.env.REACT_APP_SERVICE_ID,
         process.env.REACT_APP_TEMPLATE_ID,
         {
+          applicationURL: applicationURL,
+          applicationName: applicationName,
           documentId: documentId,
           email: email,
         },
         process.env.REACT_APP_PUBLIC_KEY
       );
-      console.log(result.text);
+      console.log(result);
     } catch (error) {
       console.log(error.text);
     }
@@ -54,7 +58,6 @@ const StorageProvider = ({ children }) => {
         collection(firestoreStorage, "queryDetails"),
         { email, input, prompt, finalOutput, headlinesOutput }
       );
-      console.log("Document written with ID: ", docRef.id);
       setDocumentId(docRef.id);
       sendEmail(docRef.id);
     } catch (e) {
@@ -75,6 +78,7 @@ const StorageProvider = ({ children }) => {
     }
   };
 
+  //exports
   const authInfo = {
     addToDb,
     addWithCustomId,
