@@ -5,6 +5,10 @@ import About from "../pages/About/About";
 import Help from "../pages/Help/Help";
 import Support from "../pages/Support/Support";
 import Privacy from "../pages/Privacy/Privacy";
+import Authentication from "../pages/Authentication/Authentication";
+import FinalDocument from "../pages/FinalDocument/FinalDocument";
+import Success from "../pages/Success/Success";
+import Edit from "../pages/Edit/Edit";
 
 export const routes = createBrowserRouter([
   {
@@ -18,6 +22,10 @@ export const routes = createBrowserRouter([
       {
         path: "/home",
         element: <Home></Home>,
+      },
+      {
+        path: "/edit",
+        element: <Edit></Edit>,
       },
       {
         path: "/about",
@@ -34,6 +42,18 @@ export const routes = createBrowserRouter([
       {
         path: "/privacy",
         element: <Privacy></Privacy>,
+      },
+      {
+        path: "/authentication",
+        element: <Authentication></Authentication>,
+      },
+      {
+        path: "/final",
+        element: <FinalDocument></FinalDocument>,
+      },
+      {
+        path: "/success",
+        element: <Success></Success>,
       },
     ],
   },

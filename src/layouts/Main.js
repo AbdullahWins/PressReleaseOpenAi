@@ -1,18 +1,21 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import "./Main.css";
-import TopNav from "../components/shared/TopNav/TopNav";
 import Footer from "../components/shared/Footer/Footer";
+// import Hero from "../components/Hero/Hero";
+import GetStarted from "../components/GetStarted/GetStarted";
 
 const Main = () => {
   return (
-    <section
-      className={`min-h-screen flex flex-col justify-start md:justify-between bg-mainBg bg-no-repeat bg-top`}
-    >
-      <TopNav></TopNav>
-      <Outlet></Outlet>
-      <Footer></Footer>
-    </section>
+    <div className="flex items-center justify-center">
+      <section
+        className={`min-h-screen w-full max-w-[1920px] flex flex-col justify-between bg-red-200 bg-no-repeat bg-top text-center`}
+      >
+        <Outlet></Outlet>
+        <GetStarted></GetStarted>
+        <Footer></Footer>
+      </section>
+    </div>
   );
 };
 
