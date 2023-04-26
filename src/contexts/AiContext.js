@@ -18,7 +18,9 @@ const AiProvider = ({ children }) => {
   //states
   const [input, setInput] = useState("");
   const [prompt, setPrompt] = useState("");
-  const [userLocation, setUserLocation] = useState([]);
+  const [userTime, setUserTime] = useState("");
+  const [userDomain, setUserDomain] = useState("");
+  const [userLocation, setUserLocation] = useState("");
   const [output, setOutput] = useState("");
   const [headlinesOutput, setHeadlinesOutput] = useState("");
   const [finalOutput, setFinalOutput] = useState("");
@@ -34,9 +36,9 @@ const AiProvider = ({ children }) => {
         geoLocation[1]?.longitude
       ).then(
         (response) => {
-          const address = response?.results[0]?.formatted_address;
-          setUserLocation(address);
-          console.log(address);
+          const formattedAddress =
+            response?.results[0]?.address_components[2]?.long_name;
+          setUserLocation(formattedAddress);
         },
         (error) => {
           console.error(error);
@@ -46,20 +48,33 @@ const AiProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    //get latitude longitude from browser
+    // getting current geolocation and converting it to get city
     const successCallback = (position) => {
       const geoLocation = [
         { latitude: `${position?.coords?.latitude}` },
         { longitude: `${position?.coords?.longitude}` },
       ];
-      // setUserGeoLocation(geoLocation);
       getUserLocationFromGoogle(geoLocation);
     };
     const errorCallback = (error) => {
       console.log(error);
     };
+
+    //getting current time
+    const current = new Date();
+    const time = current.toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    setUserTime(time);
+
+    //setting user domain address
+    setUserDomain(process.env.REACT_APP_CompanyWebsite.toUpperCase());
+
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
   }, []);
+  // console.log(userLocation, userTime, userDomain);
+  console.log(output, finalOutput);
 
   //news creation
   const processRequest = async () => {
@@ -78,8 +93,13 @@ const AiProvider = ({ children }) => {
         setIsLoading(false);
       }
       const responseCorrect = response?.data?.choices[0]?.text;
-      setOutput(responseCorrect);
-      setFinalOutput(responseCorrect);
+      const formattedResponse = responseCorrect.replace(/\\r\\n/g, "<br />");
+      const finalResponse = `FOR IMMEDIATE RELEASE <br />${userLocation} <br />${userTime} <br />${userDomain}<br /> \n ${formattedResponse}`;
+      // const finalResponse = `${
+      //   (userLocation, userTime, userDomain, responseCorrect)
+      // }`;
+      setOutput(finalResponse);
+      setFinalOutput(finalResponse);
     } catch (error) {
       console.log(error.message);
     }
