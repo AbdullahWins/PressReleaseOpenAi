@@ -2,6 +2,9 @@ import React from "react";
 import Hero from "../../components/Hero/Hero";
 
 const About = () => {
+  // changing the webpage title dynamically
+  document.title = `${process.env.REACT_APP_ApplicationName} | About`;
+  
   return (
     <div>
       <Hero></Hero>
@@ -19,8 +22,9 @@ const About = () => {
                 We Are
               </p>
               <p className="text-base md:text-2xl text-aboutDetailsColor pt-12">
-                Press Writer AI, a Chat GPT API-powered AI News Generator app
-                developed by Netro Creative, provides natural language
+                {process.env.REACT_APP_ApplicationName}, a Chat GPT API-powered
+                AI News Generator app developed by{" "}
+                {process.env.REACT_APP_CompanyName}, provides natural language
                 conversations with a virtual assistant for task assistance and
                 helpful information. Its advanced language processing
                 capabilities make it convenient for both personal and business
@@ -33,11 +37,13 @@ const About = () => {
                 We Do
               </p>
               <p className="text-base md:text-2xl text-aboutDetailsColor pt-12">
-                Netro Creative's Press Writer AI is a News Generator app that
-                uses Chat GPT API, helping users to accomplish their tasks and
-                obtain helpful information via natural language conversations,
-                thanks to its advanced language processing features. You're
-                responsible for its development, deployment, and maintenance.
+                {process.env.REACT_APP_CompanyName}'s{" "}
+                {process.env.REACT_APP_ApplicationName} is a News Generator app
+                that uses Chat GPT API, helping users to accomplish their tasks
+                and obtain helpful information via natural language
+                conversations, thanks to its advanced language processing
+                features. You're responsible for its development, deployment,
+                and maintenance.
               </p>
             </div>
           </div>

@@ -2,6 +2,8 @@ import React from "react";
 import Hero from "../../components/Hero/Hero";
 
 const Help = () => {
+  // changing the webpage title dynamically
+  document.title = `${process.env.REACT_APP_ApplicationName} | Help`;
   return (
     <div>
       <Hero></Hero>
@@ -14,18 +16,21 @@ const Help = () => {
               </p>
               <ol className="text-base md:text-2xl text-start text-aboutDetailsColor pt-12">
                 <li>
-                  1. Choose a topic: Select a topic that you want the AI news
-                  writer to write about. The webapp may have a list of popular
-                  topics or you can input a specific topic.
+                  1. Choose a topic: Select a topic that you want the{" "}
+                  {process.env.REACT_APP_ApplicationName} to write about. The
+                  webapp may have a list of popular topics or you can input a
+                  specific topic.
                 </li>
                 <li className="py-4">
-                  2. Provide key points: Give the AI news writer some key points
-                  or information that you want to include in the article. This
+                  2. Provide key points: Give the{" "}
+                  {process.env.REACT_APP_ApplicationName} some key points or
+                  information that you want to include in the article. This
                   could be a summary of the topic or some specific details that
                   you want to emphasize.
                 </li>
                 <li>
-                  3. Review and edit: Once the AI news writer has generated the
+                  3. Review and edit: Once the{" "}
+                  {process.env.REACT_APP_ApplicationName} has generated the
                   article, review it carefully. Make any necessary edits or
                   changes to ensure that the article meets your needs.
                 </li>

@@ -21,7 +21,7 @@ const AiProvider = ({ children }) => {
   const [documentId, setDocumentId] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  //functions
+  //news creation
   const processRequest = async () => {
     setOutput("");
     try {
@@ -45,6 +45,7 @@ const AiProvider = ({ children }) => {
     }
   };
 
+  //title creation
   const processHeadlinesRequest = async () => {
     setOutput("");
     try {
@@ -67,18 +68,13 @@ const AiProvider = ({ children }) => {
     }
   };
 
-  //   console.log("ip", input);
-  //   console.log("pr", prompt);
-  //   console.log("op", output);
-  //   console.log("email", email);
-  console.log("id", documentId);
-
   //reset output
   const resetOutput = () => {
     const output = "";
     setOutput(output);
   };
 
+  //exports
   const aiInfo = {
     input,
     setInput,

@@ -2,6 +2,8 @@ import React from "react";
 import Hero from "../../components/Hero/Hero";
 
 const Privacy = () => {
+  // changing the webpage title dynamically
+  document.title = `${process.env.REACT_APP_ApplicationName} | Privacy`;
   return (
     <div>
       <Hero></Hero>
@@ -12,14 +14,15 @@ const Privacy = () => {
               <p className="text-transparent bg-clip-text bg-gradient-to-b from-getStartedGradientStart to-getStartedGradientEnd text-5xl md:text-8xl font-bold pb-8">
                 Privacy Policy
               </p>
-              <p className="text-start font-2xl text-blackLow">
-                Privacy Policy Effective Date: 19 April 2023 At Press Writer AI,
-                we value your privacy and are committed to protecting your
-                personal information.
+              <p className="text-start md:text-2xl text-blackLow">
+                Privacy Policy Effective Date: 19 April 2023 At{" "}
+                {process.env.REACT_APP_ApplicationName}, we value your privacy
+                and are committed to protecting your personal information.
                 <br />
                 <br />
                 This Privacy Policy explains how we collect, use, and disclose
-                your personal information when you use our AI news writer
+                your personal information when you use our{" "}
+                {process.env.REACT_APP_ApplicationName}
                 webapp. Information We Collect We collect personal information
                 that you provide to us when you register for an account, such as
                 your name, email address, and password. We may also collect
@@ -64,7 +67,10 @@ const Privacy = () => {
                 <br />
                 Contact Us If you have any questions or concerns about this
                 Privacy Policy or our privacy practices, please contact us at
-                <span className="font-black">support@netrocreative.com</span>.
+                <span className="font-black">
+                  {process.env.REACT_APP_SupportEmail}
+                </span>
+                .
               </p>
             </div>
           </div>
