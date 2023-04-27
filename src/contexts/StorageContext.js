@@ -41,7 +41,6 @@ const StorageProvider = ({ children }) => {
       const docSnap = await getDoc(ref);
       if (docSnap.exists()) {
         const rowDocumentData = docSnap.data();
-        console.log(rowDocumentData);
         setDocumentData(rowDocumentData);
       } else {
         console.log("No such doCUMent!");

@@ -73,8 +73,6 @@ const AiProvider = ({ children }) => {
 
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
   }, []);
-  // console.log(userLocation, userTime, userDomain);
-  console.log(output, finalOutput);
 
   //news creation
   const processRequest = async () => {
