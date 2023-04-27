@@ -56,9 +56,9 @@ const Footer = () => {
         </section>
         <section className="w-full">
           <hr className="text-whiteMid" />
-          <div className="flex items-center justify-between w-full md:py-10">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full md:py-10">
             <p>© 2023 All rights reserved</p>
-            <p>Develop By Netro Creative</p>
+            <p>Develop By {process.env.REACT_APP_CompanyName}</p>
           </div>
         </section>
       </div>
