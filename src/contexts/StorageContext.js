@@ -27,7 +27,7 @@ const StorageProvider = ({ children }) => {
         },
         process.env.REACT_APP_PUBLIC_KEY
       );
-      console.log(result);
+      console.log(result.status);
     } catch (error) {
       console.log(error.text);
     }
@@ -41,7 +41,6 @@ const StorageProvider = ({ children }) => {
       const docSnap = await getDoc(ref);
       if (docSnap.exists()) {
         const rowDocumentData = docSnap.data();
-        console.log(rowDocumentData);
         setDocumentData(rowDocumentData);
       } else {
         console.log("No such doCUMent!");
