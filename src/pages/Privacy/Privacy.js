@@ -8,13 +8,13 @@ const Privacy = () => {
     <div>
       <Hero></Hero>
       <section className="flex items-center justify-center">
-        <div className="max-w-10/12 p-4 md:p-20 rounded-xl border-2 border-whiteMid m-4 md:my-28 w-full">
-          <div className="flex flex-col md:flex-row items-start justify-center gap-4 py-10 px-4">
-            <div className="bg-whiteHigh rounded-2xl p-6 min-h-80">
-              <p className="text-transparent bg-clip-text bg-gradient-to-b from-getStartedGradientStart to-getStartedGradientEnd text-5xl md:text-8xl font-bold pb-8">
+        <div className="max-w-5xl p-4 md:p-20 rounded-xl border-2 border-whiteMid m-4 md:my-20 w-full">
+          <div className="flex flex-col md:flex-row items-start justify-center gap-4 px-4">
+            <div className="bg-whiteHigh rounded-2xl min-h-80">
+              <p className="text-transparent bg-clip-text bg-gradient-to-b from-getStartedGradientStart to-getStartedGradientEnd text-3xl md:text-5xl font-bold pb-8">
                 Privacy Policy
               </p>
-              <p className="text-start md:text-2xl text-blackLow">
+              <p className="text-start md:text-xl text-blackLow">
                 Privacy Policy Effective Date: 19 April 2023 At{" "}
                 {process.env.REACT_APP_ApplicationName}, we value your privacy
                 and are committed to protecting your personal information.

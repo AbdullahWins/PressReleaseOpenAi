@@ -9,19 +9,19 @@ const About = () => {
     <div>
       <Hero></Hero>
       <section className="flex items-center justify-center">
-        <div className="max-w-10/12 p-4 md:p-20 rounded-xl border-2 border-whiteMid m-4 md:my-28 w-full">
+        <div className="max-w-5xl p-4 md:p-20 rounded-xl border-2 border-whiteMid m-4 md:my-20 w-full">
           <div className="text-center">
-            <p className="text-transparent bg-clip-text bg-gradient-to-b from-aboutTextStart to-aboutTextEnd text-4xl md:text-7xl font-bold pb-2">
+            <p className="text-transparent bg-clip-text bg-gradient-to-b from-aboutTextStart to-aboutTextEnd text-2xl md:text-5xl font-bold pb-2">
               About us
             </p>
           </div>
           <div className="flex flex-col md:flex-row items-start justify-center gap-4 py-10 px-4">
             <div className="bg-whiteHigh rounded-2xl p-6 min-h-80">
-              <p className="text-2xl text-aboutHeaderColor">Who</p>
-              <p className="text-transparent bg-clip-text bg-gradient-to-b  from-getStartedGradientStart to-getStartedGradientEnd text-5xl md:text-8xl font-bold">
+              <p className="text-xl text-aboutHeaderColor">Who</p>
+              <p className="text-transparent bg-clip-text bg-gradient-to-b  from-getStartedGradientStart to-getStartedGradientEnd text-3xl md:text-6xl font-bold">
                 We Are
               </p>
-              <p className="text-base md:text-2xl text-aboutDetailsColor pt-12">
+              <p className="text-base md:text-xl text-aboutDetailsColor pt-12">
                 {process.env.REACT_APP_ApplicationName}, a Chat GPT API-powered
                 AI News Generator app developed by{" "}
                 {process.env.REACT_APP_CompanyName}, provides natural language
@@ -32,11 +32,11 @@ const About = () => {
               </p>
             </div>
             <div className="bg-whiteHigh rounded-2xl p-6 min-h-80">
-              <p className="text-2xl text-aboutHeaderColor">What</p>
-              <p className="text-transparent bg-clip-text bg-gradient-to-b from-getStartedGradientStart to-getStartedGradientEnd text-5xl md:text-8xl font-bold">
+              <p className="text-xl text-aboutHeaderColor">What</p>
+              <p className="text-transparent bg-clip-text bg-gradient-to-b from-getStartedGradientStart to-getStartedGradientEnd text-5xl md:text-6xl font-bold">
                 We Do
               </p>
-              <p className="text-base md:text-2xl text-aboutDetailsColor pt-12">
+              <p className="text-base md:text-xl text-aboutDetailsColor pt-12">
                 {process.env.REACT_APP_CompanyName}'s{" "}
                 {process.env.REACT_APP_ApplicationName} is a News Generator app
                 that uses Chat GPT API, helping users to accomplish their tasks
