@@ -8,7 +8,7 @@ const TopNav = () => {
   return (
     <div>
       <TopNavResponsive></TopNavResponsive>
-      <section className="hidden md:flex items-center justify-between gap-1 bg-whiteHigh rounded-full px-4 md:px-8 py-3">
+      <section className="hidden md:flex items-center justify-between gap-1 bg-whiteHigh rounded-full px-4 md:px-8 py-2">
         <Link to="/help" className="">
           <button
             className={`text-xl btn btn-ghost text-center ${

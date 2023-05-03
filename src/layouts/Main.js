@@ -7,14 +7,14 @@ import GetStarted from "../components/GetStarted/GetStarted";
 
 const Main = () => {
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex flex-col items-center justify-center">
       <section
         className={`min-h-screen w-full max-w-6xl flex flex-col justify-between bg-red-200 bg-no-repeat bg-top text-center`}
       >
         <Outlet></Outlet>
         <GetStarted></GetStarted>
-        <Footer></Footer>
       </section>
+      <Footer></Footer>
     </div>
   );
 };
