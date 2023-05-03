@@ -46,7 +46,7 @@ const Writter = () => {
               for you.
             </p>
           </div>
-          <section className="flex flex-col md:flex-row gap-4 md:gap-0 items-center justify-center pb-4 md:pb-0 md:p-4">
+          <section className="flex flex-col md:flex-row gap-4 md:gap-0 items-center justify-center pb-4 md:p-4">
             <div className="w-full md:w-1/2 flex flex-col md:flex-row gap-6 items-center md:items-start justify-center min-w-xl border-2 border-titleGradientStart rounded-2xl p-4">
               <img src={icon1} alt="" />
               <div className="text-center md:text-start">
