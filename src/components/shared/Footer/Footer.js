@@ -4,8 +4,8 @@ import logo from "../../../assets/logos/logo.png";
 const Footer = () => {
   return (
     <footer className="flex flex-col items-center bg-bgFooter text-whiteHigh w-full">
-      <div className="md:pt-12 md:w-10/12 flex flex-col items-center justify-between h-full">
-        <section className="md:pt-28 w-full p-4 md:p-0">
+      <div className="md:pt-12 flex flex-col items-center justify-between gap-2 w-full md:max-w-6xl">
+        <section className="md:pt-28 p-4 md:p-0 w-10/12">
           <div className="grid grid-cols-1 md:grid-cols-12 items-center justify-between gap-2 md:gap-4 w-full">
             <div className="col-span-1 md:col-span-6">
               <img src={logo} alt="" />
@@ -54,7 +54,7 @@ const Footer = () => {
             </div>
           </div>
         </section>
-        <section className="w-full">
+        <section className="w-10/12">
           <hr className="text-whiteMid" />
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full md:py-2">
             <p>© 2023 All rights reserved</p>
