@@ -23,15 +23,15 @@ const AuthHero = () => {
     }, 1000);
   };
   return (
-    <section className="flex flex-col items-center justify-start bg-authHeroBg bg-no-repeat bg-top text-center md:h-[1000px] pt-10">
+    <section className="flex flex-col items-center justify-start bg-authHeroBg bg-no-repeat bg-bottom text-center pt-10">
       <TopNav></TopNav>
-      <div className="flex flex-col items-center justify-center px-4 md:px-0 md:py-0 md:pt-[189px] text-whiteHigh">
+      <div className="flex flex-col items-center justify-center px-4 md:px-0 md:py-32 text-whiteHigh">
         <div className="max-w-10/12 w-full">
           <div className="pb-16">
-            <p className="text-whiteHigh text-4xl md:text-6xl font-bold pb-3">
+            <p className="text-whiteHigh text-4xl md:text-6xl font-bold pb-1">
               Authentication Required
             </p>
-            <p className="text-whiteHigh text-xl md:text-2xl font-bold pb-3">
+            <p className="text-whiteHigh text-md md:text-lg font-bold pb-1">
               An access key was emailed to
               <span className="font-black">{email}</span> with this link. Please
               enter it bellow.
@@ -43,13 +43,13 @@ const AuthHero = () => {
               type="text"
               onChange={handleCodeChange}
               placeholder="Enter access key here"
-              className="input w-full max-w-6xl border-2 text-blackMid border-btnGradientEnd"
+              className="input w-full max-w-5xl border-2 text-blackMid border-btnGradientEnd"
             ></input>
             <button
               onClick={() => {
                 handleSubmit();
               }}
-              className="btn btn-wide bg-gradient-to-r text-2xl from-btnGradientStart to-btnGradientEnd normal-case border-none"
+              className="btn bg-gradient-to-r text-2xl from-btnGradientStart to-btnGradientEnd normal-case border-none"
             >
               Validate
             </button>
