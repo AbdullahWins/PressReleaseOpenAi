@@ -8,10 +8,10 @@ const TopNav = () => {
   return (
     <div>
       <TopNavResponsive></TopNavResponsive>
-      <section className="hidden md:flex items-center justify-between gap-4 bg-whiteHigh rounded-full px-4 md:px-20 py-3">
+      <section className="hidden md:flex items-center justify-between gap-1 bg-whiteHigh rounded-full px-4 md:px-8 py-3">
         <Link to="/help" className="">
           <button
-            className={`text-xl btn btn-ghost ${
+            className={`text-xl btn btn-ghost text-center ${
               pageTitle === `${process.env.REACT_APP_ApplicationName} | Help`
                 ? "bg-btnHoverColor text-whiteHigh"
                 : ""
@@ -22,7 +22,7 @@ const TopNav = () => {
         </Link>
         <Link to="/about">
           <button
-            className={`text-xl btn btn-ghost ${
+            className={`text-xl btn btn-ghost text-center ${
               pageTitle === `${process.env.REACT_APP_ApplicationName} | About`
                 ? "bg-btnHoverColor text-whiteHigh"
                 : ""
@@ -33,7 +33,7 @@ const TopNav = () => {
         </Link>
         <Link to="/home">
           <button
-            className={`text-xl btn btn-ghost ${
+            className={`text-xl btn btn-ghost text-center ${
               pageTitle === `${process.env.REACT_APP_ApplicationName} | Home`
                 ? "bg-btnHoverColor text-whiteHigh"
                 : ""
