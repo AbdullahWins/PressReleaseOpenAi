@@ -38,7 +38,7 @@ const Writter = () => {
       <div className="flex items-center justify-center md:pt-8 w-10/12 bg-whiteHigh rounded-3xl shadow-lg shadow-blackLow p-4">
         <div className="max-w-6xl">
           <div className="pb-8">
-            <p className="text-transparent bg-clip-text bg-gradient-to-r from-titleGradientStart to-titleGradientEnd text-xl md:text-4xl font-bold pb-3">
+            <p className="text-transparent bg-clip-text bg-gradient-to-r from-titleGradientStart to-titleGradientEnd text-xl md:text-5xl font-bold py-3">
               AI Press Release Writing Tool
             </p>
             <p className="text-md px-2 md:px-0 md:text-lg">
