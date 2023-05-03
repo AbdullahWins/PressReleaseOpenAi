@@ -18,10 +18,10 @@ const FinalDocument = () => {
   return (
     <div>
       <FinalHero></FinalHero>
-      <section className="flex items-center justify-center mt-8 md:mt-[-212px] pb-8 md:pb-40">
-        <div className="flex items-center justify-center md:pt-16 w-10/12 bg-whiteHigh rounded-3xl shadow-lg shadow-blackLow p-4">
-          <div className="max-w-6xl w-full">
-            <section className="flex flex-col gap-4 pb-12">
+      <section className="flex items-center justify-center md:-mt-28 pb-8 md:pb-16 p-4">
+        <div className="flex items-center justify-center md:pt-6 w-full max-w-5xl bg-whiteHigh rounded-3xl shadow-lg shadow-blackLow p-4">
+          <div className="w-full">
+            <section className="flex flex-col gap-4 pb-4">
               <div>
                 <p className="text-start text-textSubtitleColor text-sm">
                   Given description to AI
@@ -59,7 +59,7 @@ const FinalDocument = () => {
                 ></textarea>
               </div>
               <Link className="flex items-start" to="/">
-                <button className="btn btn-wide mt-12 mb-2 bg-gradient-to-r from-btnGradientStart to-btnGradientEnd normal-case border-none">
+                <button className="btn btn-wide mt-2 bg-gradient-to-r from-btnGradientStart to-btnGradientEnd normal-case border-none">
                   Generate Another
                 </button>
               </Link>

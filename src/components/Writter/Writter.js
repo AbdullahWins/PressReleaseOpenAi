@@ -34,7 +34,7 @@ const Writter = () => {
   };
 
   return (
-    <section className="flex items-center justify-center mt-8 md:-mt-28">
+    <section className="flex items-center justify-center mt-8 md:-mt-28  p-4">
       <div className="flex items-center justify-center md:pt-8 bg-whiteHigh rounded-3xl shadow-lg shadow-blackLow p-4 max-w-5xl">
         <div className="w-10/12">
           <div className="pb-8">

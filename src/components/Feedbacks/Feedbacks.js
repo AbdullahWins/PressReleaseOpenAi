@@ -4,7 +4,7 @@ import Cards from "../shared/Cards/Cards";
 const Feedbacks = () => {
   return (
     <section className="flex flex-col items-center justify-center">
-      <div className="flex items-center justify-center py-8 md:py-20">
+      <div className="flex items-center justify-center p-4 py-8 md:py-20">
         <div className="max-w-5xl">
           <div className="">
             <h4 className="text-3xl font-bold text-testimonialColor">

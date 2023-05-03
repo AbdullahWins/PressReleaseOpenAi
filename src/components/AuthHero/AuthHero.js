@@ -43,7 +43,7 @@ const AuthHero = () => {
               type="text"
               onChange={handleCodeChange}
               placeholder="Enter access key here"
-              className="input w-full max-w-6xl border-2 text-blackMid border-btnGradientEnd"
+              className="input w-full max-w-5xl border-2 text-blackMid border-btnGradientEnd"
             ></input>
             <button
               onClick={() => {
