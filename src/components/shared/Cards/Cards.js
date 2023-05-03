@@ -12,7 +12,7 @@ const Cards = () => {
             <div>
               <img src={customer1} alt="" />
             </div>
-            <div className="text-center md:text-start pt-2">
+            <div className="text-center md:text-start">
               <p className="text-xl font-semibold">Mila McSabbu</p>
               <p className="text-md">Freelancer Designer</p>
             </div>
