@@ -92,7 +92,7 @@ const AiProvider = ({ children }) => {
       }
       const responseCorrect = response?.data?.choices[0]?.text;
       // const formattedResponse = responseCorrect.replace(/\\r\\n/g, "<br />");
-      const finalResponse = `${userLocation} | ${userTime} | ${userDomain} </br> ${responseCorrect}`;
+      const finalResponse = `FOR IMMEDIATE RELEASE | ${userLocation} | ${userTime} | ${userDomain} </br> ${responseCorrect}`;
       // const finalResponse = `${
       //   (userLocation, userTime, userDomain, responseCorrect)
       // }`;
