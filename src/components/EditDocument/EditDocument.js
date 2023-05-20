@@ -28,9 +28,9 @@ const EditDocument = () => {
   };
 
   return (
-    <section className="flex items-center justify-center mt-8 md:mt-[-212px] pb-8 md:pb-40">
-      <div className="flex items-center justify-center md:pt-16 w-10/12 bg-whiteHigh rounded-3xl shadow-lg shadow-blackLow p-4">
-        <div className="max-w-6xl">
+    <section className="flex items-center justify-center mt-8 md:-mt-28 pb-8 md:pb-40">
+      <div className="flex items-center justify-center md:pt-16 max-w-5xl bg-whiteHigh rounded-3xl shadow-lg shadow-blackLow p-4">
+        <div className="w-10/12">
           <div className="md:pb-16">
             <p className="text-transparent bg-clip-text bg-gradient-to-r from-titleGradientStart to-titleGradientEnd text-4xl md:text-6xl font-bold pb-3">
               Press Release Results
